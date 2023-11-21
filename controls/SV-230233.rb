@@ -29,13 +29,21 @@ SHA_CRYPT_MIN_ROUNDS 5000'
   tag cci: ['CCI-000196']
   tag nist: ['IA-5 (1) (c)']
 
-  describe.one login_defs do
-    its('SHAH_CRYPT_MIN_ROUNDS') { should cmp >= 5000 }
-    its('SHAH_CRYPT_MIN_ROUNDS') { should_be_nil }
+  describe.one do
+    describe login_defs do
+      its('SHAH_CRYPT_MIN_ROUNDS') { should cmp >= 5000 }
+    end
+    describe login_defs do
+      its('SHAH_CRYPT_MIN_ROUNDS') { should_be_nil }
+    end
   end
 
-  describe.one login_defs do
-    its('SHAH_CRYPT_MAX_ROUNDS') { should cmp >= 5000 }
-    its('SHAH_CRYPT_MAX_ROUNDS') { should_be_nil }
+  describe.one do
+    describe login_defs do
+      its('SHAH_CRYPT_MAX_ROUNDS') { should cmp >= 5000 }
+    end
+    describe login_defs do
+      its('SHAH_CRYPT_MAX_ROUNDS') { should_be_nil }
+    end
   end
 end
