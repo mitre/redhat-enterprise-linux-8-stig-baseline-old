@@ -29,7 +29,8 @@ SHA_CRYPT_MIN_ROUNDS 5000'
   tag cci: ['CCI-000196']
   tag nist: ['IA-5 (1) (c)']
 
-  describe pam('/etc/pam.d/password-auth') do
-    its('lines') { should match_pam_rule('password sufficient pam_unix.so').all_with_integer_arg('rounds', '>=', 5000) }
+  describe.one login_defs do
+    its('SHAH_CRYPT_MIN_ROUNDS') { should cmp >= 5000 }
+    its('SHAH_CRYPT_MAX_ROUNDS') { should cmp >= 5000 }
   end
 end
