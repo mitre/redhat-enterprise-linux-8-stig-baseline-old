@@ -31,6 +31,11 @@ SHA_CRYPT_MIN_ROUNDS 5000'
 
   describe.one login_defs do
     its('SHAH_CRYPT_MIN_ROUNDS') { should cmp >= 5000 }
+    its('SHAH_CRYPT_MIN_ROUNDS') { should_be_nil }
+  end
+
+  describe.one login_defs do
     its('SHAH_CRYPT_MAX_ROUNDS') { should cmp >= 5000 }
+    its('SHAH_CRYPT_MAX_ROUNDS') { should_be_nil }
   end
 end
