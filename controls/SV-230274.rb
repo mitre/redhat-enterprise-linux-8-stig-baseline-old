@@ -62,7 +62,7 @@ $ sudo systemctl restart sssd.service'
 
     unless sssd_conf_file_contents.empty?
       describe ini({ command: 'cat /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf' }) do
-        its('sssd.certificate_verification') { should match /ocsp_dgst\s?=\s?sha1/ }
+        its('sssd.certificate_verification') { should match /ocsp_dgst(\s+)?=(\s+)?sha1/ }
       end
     end
   end
