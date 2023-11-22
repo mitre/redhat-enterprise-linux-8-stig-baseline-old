@@ -29,8 +29,6 @@ Add the following line to the "/etc/pam.d/password-auth" file (or modify the lin
   tag cci: ['CCI-000192', 'CCI-000366']
   tag nist: ['IA-5 (1) (a)', 'CM-6 b']
 
-  max_retry = input('max_retry')
-
   describe pam('/etc/pam.d/passwd') do
     its('lines') { should match_pam_rule('password (required|requisite) pam_pwquality.so') }
   end
