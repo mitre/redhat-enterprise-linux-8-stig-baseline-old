@@ -44,7 +44,7 @@ Reboot the system for the changes to take effect.'
   tag nist: ['AC-17 (2)']
 
   if virtualization.system.eql?('docker')
-    describe 'Control not applicable within a container' do
+    describe 'Control requires manual review within a container' do
       skip "Enforcement of Federal Government approved encryption algorithms should be enabled on the container as well.  Both Container OS and Host OS should be set to FIPS mode, which will require a set of FIPS-compliant cryptographic algorithms to be used on the system. Since checking the host's FIPS compliance can't be done within the container this check should be performed manually."
     end
   else
