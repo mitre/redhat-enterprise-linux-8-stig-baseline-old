@@ -24,7 +24,7 @@ configuration file or is related to an outgoing network connection.'
 
 If no zones are active on the RHEL 8 interfaces or if the target is set to a different option other than "DROP", this is a finding.
 
-If the "firewalld" package is not installed, ask the System Administrator if an alternate firewall (such as iptables) is installed and in use, and how is it configured to employ a deny-all, allow-by-exception policy. 
+If the "firewalld" package is not installed, ask the System Administrator if an alternate firewall (such as iptables) is installed and in use, and how is it configured to employ a deny-all, allow-by-exception policy.
 
 If the alternate firewall is not configured to employ a deny-all, allow-by-exception policy, this is a finding.
 
@@ -66,19 +66,26 @@ $ sudo firewall-cmd --reload'
     !virtualization.system.eql?('docker')
   }
 
-  describe service('firewalld') do
-    it { should be_running }
-  end
+  if input('external_firewall') == false
 
-  describe firewalld do
-    its('zone') { should_not be_empty }
-  end
+    describe service('firewalld') do
+      it { should be_running }
+    end
 
-  failing_zones = firewalld.zone.reject { |fz| firewalld.zone(fz).target == 'DROP' }
+    describe firewalld do
+      its('zone') { should_not be_empty }
+    end
 
-  describe 'All firewall zones' do
-    it 'should be configured to drop all incoming network packets unless explicitly accepted' do
-      expect(failing_zones).to be_empty, "Failing zones:\n\t- #{failing_zones.join("\n\t- ")}"
+    failing_zones = firewalld.zone.reject { |fz| firewalld.zone(fz).target == 'DROP' }
+
+    describe 'All firewall zones' do
+      it 'should be configured to drop all incoming network packets unless explicitly accepted' do
+        expect(failing_zones).to be_empty, "Failing zones:\n\t- #{failing_zones.join("\n\t- ")}"
+      end
+    end
+  else
+    describe 'Manual' do
+      skip 'Inputs indicate this system is using a firewall tool other than the default firewalld; review the configuration of this tool to ensure it employs a deny-all, allow-by-exception policy for allowing connections to other systems.'
     end
   end
 end

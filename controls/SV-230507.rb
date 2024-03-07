@@ -36,11 +36,11 @@ Determine if Bluetooth is disabled with the following command:
 
 If the Bluetooth driver blacklist entry is missing, a Bluetooth driver is determined to be in use, and the collaborative computing device has not been authorized for use, this is a finding.
 
-Verify the operating system disables the ability to use Bluetooth with the following command:  
- 
-     $ sudo grep -r bluetooth /etc/modprobe.d | grep -i "blacklist" | grep -v "^#" 
-     blacklist bluetooth 
- 
+Verify the operating system disables the ability to use Bluetooth with the following command:
+
+     $ sudo grep -r bluetooth /etc/modprobe.d | grep -i "blacklist" | grep -v "^#"
+     blacklist bluetooth
+
 If the command does not return any output or the output is not "blacklist bluetooth", and use of Bluetooth is not documented with the ISSO as an operational requirement, this is a finding.'
   desc 'fix', 'Configure the operating system to disable the Bluetooth adapter when not in use.
 
@@ -48,12 +48,12 @@ Build or modify the "/etc/modprobe.d/bluetooth.conf" file with the following lin
 
      install bluetooth /bin/false
 
-Disable the ability to use the Bluetooth kernel module. 
- 
-     $ sudo vi /etc/modprobe.d/blacklist.conf 
- 
-Add or update the line: 
- 
+Disable the ability to use the Bluetooth kernel module.
+
+     $ sudo vi /etc/modprobe.d/blacklist.conf
+
+Add or update the line:
+
      blacklist bluetooth
 
 Reboot the system for the settings to take effect.'

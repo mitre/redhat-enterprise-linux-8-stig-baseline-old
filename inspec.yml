@@ -737,7 +737,7 @@ inputs:
     type: String
     value: /etc/security/faillock.conf
 
-  # SV-244544
+  # SV-244544, SV-230504
   - name: external_firewall
     description: "The system use an external firewall or service vs a local firewall service"
     type: Boolean
