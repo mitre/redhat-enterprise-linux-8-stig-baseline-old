@@ -56,6 +56,7 @@ control 'SV-250315' do
 
   $ sudo restorecon -R -v /var/log/faillock'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-53749r793000_chk'
   tag severity: 'medium'
   tag gid: 'V-250315'

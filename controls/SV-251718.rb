@@ -15,6 +15,7 @@ $ sudo systemctl set-default multi-user.target
 
 A reboot is required for the changes to take effect.'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-55155r809376_chk'
   tag severity: 'medium'
   tag gid: 'V-251718'

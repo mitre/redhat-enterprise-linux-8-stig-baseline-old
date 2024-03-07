@@ -18,29 +18,20 @@ Windows Active Directory server. Any of these methods will require that the
 client operating system handle the multifactor authentication correctly.'
   desc 'check', 'Verify RHEL 8 uses multifactor authentication for local access to accounts.
 
-    Note: If the System Administrator demonstrates the use of an approved
-alternate multifactor authentication method, this requirement is not applicable.
+Note: If the System Administrator demonstrates the use of an approved alternate multifactor authentication method, this requirement is not applicable.
 
-    Check that the "pam_cert_auth" setting is set to "true" in the
-"/etc/sssd/sssd.conf" file.
+Check that the "pam_cert_auth" setting is set to "true" in the "/etc/sssd/sssd.conf" file.
 
-    Check that the "try_cert_auth" or "require_cert_auth" options are
-configured in both "/etc/pam.d/system-auth" and "/etc/pam.d/smartcard-auth"
-files with the following command:
+Check that the "try_cert_auth" or "require_cert_auth" options are configured in both "/etc/pam.d/system-auth" and "/etc/pam.d/smartcard-auth" files with the following command:
 
-    $ sudo grep cert_auth /etc/sssd/sssd.conf /etc/pam.d/*
+     $ sudo grep -ir cert_auth /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf /etc/pam.d/*
+     /etc/sssd/sssd.conf:pam_cert_auth = True
+     /etc/pam.d/smartcard-auth:auth   sufficient   pam_sss.so try_cert_auth
+     /etc/pam.d/system-auth:auth   [success=done authinfo_unavail=ignore ignore=ignore default=die]   pam_sss.so try_cert_auth
 
-    /etc/sssd/sssd.conf:pam_cert_auth = True
-    /etc/pam.d/smartcard-auth:auth   sufficient   pam_sss.so try_cert_auth
-    /etc/pam.d/system-auth:auth   [success=done authinfo_unavail=ignore
-ignore=ignore default=die]   pam_sss.so try_cert_auth
+If "pam_cert_auth" is not set to "true" in "/etc/sssd/sssd.conf", this is a finding.
 
-    If "pam_cert_auth" is not set to "true" in "/etc/sssd/sssd.conf",
-this is a finding.
-
-    If "pam_sss.so" is not set to "try_cert_auth" or "require_cert_auth"
-in both the "/etc/pam.d/smartcard-auth" and "/etc/pam.d/system-auth" files,
-this is a finding.'
+If "pam_sss.so" is not set to "try_cert_auth" or "require_cert_auth" in both the "/etc/pam.d/smartcard-auth" and "/etc/pam.d/system-auth" files, this is a finding.'
   desc 'fix', 'Configure RHEL 8 to use multifactor authentication for local access to
 accounts.
 
@@ -64,13 +55,14 @@ restart the "sssd" service, run the following command:
 
     $ sudo systemctl restart sssd.service'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000105-GPOS-00052'
   tag satisfies: ['SRG-OS-000105-GPOS-00052', 'SRG-OS-000106-GPOS-00053', 'SRG-OS-000107-GPOS-00054', 'SRG-OS-000108-GPOS-00055']
   tag gid: 'V-230372'
-  tag rid: 'SV-230372r627750_rule'
+  tag rid: 'SV-230372r942945_rule'
   tag stig_id: 'RHEL-08-020250'
-  tag fix_id: 'F-33016r567863_fix'
+  tag fix_id: 'F-33016r942944_fix'
   tag cci: ['CCI-000765']
   tag nist: ['IA-2 (1)']
   tag 'host'

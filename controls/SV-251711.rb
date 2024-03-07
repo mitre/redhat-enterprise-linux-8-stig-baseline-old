@@ -40,6 +40,7 @@ control 'SV-251711' do
         Add or modify the following line:
         #includedir /etc/sudoers.d'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-55148r833384_chk'
   tag severity: 'medium'
   tag gid: 'V-251711'

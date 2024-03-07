@@ -31,6 +31,7 @@ lcredit = -1
 
 Remove any configurations that conflict with the above value.'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000070-GPOS-00038'
   tag gid: 'V-230358'

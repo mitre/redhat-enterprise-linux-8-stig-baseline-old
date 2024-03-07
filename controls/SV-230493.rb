@@ -26,35 +26,34 @@ If the camera is not disconnected, covered, or physically disabled, determine if
 
 Verify the operating system disables the ability to load the uvcvideo kernel module.
 
-$ sudo grep -r uvcvideo /etc/modprobe.d/* | grep "/bin/true"
-
-install uvcvideo /bin/true
+     $ sudo grep -r uvcvideo /etc/modprobe.d/* | grep "/bin/false"
+     install uvcvideo /bin/false
 
 If the command does not return any output, or the line is commented out, and the collaborative computing device has not been authorized for use, this is a finding.
 
 Verify the camera is disabled via blacklist with the following command:
 
-$ sudo grep -r uvcvideo /etc/modprobe.d/* | grep "blacklist"
-
-blacklist uvcvideo
+     $ sudo grep -r uvcvideo /etc/modprobe.d/* | grep "blacklist"
+     blacklist uvcvideo
 
 If the command does not return any output or the output is not "blacklist uvcvideo", and the collaborative computing device has not been authorized for use, this is a finding.'
   desc 'fix', 'Configure the operating system to disable the built-in or attached camera when not in use.
 
 Build or modify the "/etc/modprobe.d/blacklist.conf" file by using the following example:
 
-install uvcvideo /bin/true
-blacklist uvcvideo
+     install uvcvideo /bin/false
+     blacklist uvcvideo
 
 Reboot the system for the settings to take effect.'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000095-GPOS-00049'
   tag satisfies: ['SRG-OS-000095-GPOS-00049', 'SRG-OS-000370-GPOS-00155']
   tag gid: 'V-230493'
-  tag rid: 'SV-230493r809316_rule'
+  tag rid: 'SV-230493r942915_rule'
   tag stig_id: 'RHEL-08-040020'
-  tag fix_id: 'F-33137r809315_fix'
+  tag fix_id: 'F-33137r942914_fix'
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
   tag 'host'

@@ -1,5 +1,5 @@
 control 'SV-230224' do
-  title 'All RHEL 8 local disk partitions must implement disk encryption'
+  title 'All RHEL 8 local disk partitions must implement cryptographic mechanisms to prevent unauthorized disclosure or modification of all information that requires at rest protection.'
   desc 'RHEL 8 systems handling data requiring "data at rest" protections
     must employ cryptographic mechanisms to prevent unauthorized disclosure and
     modification of the information at rest.
@@ -30,6 +30,7 @@ rest by using disk encryption.
     because existing partitions will need to be resized and changed. To encrypt an
     entire partition, dedicate a partition for encryption in the partition layout.'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000185-GPOS-00079'
   tag satisfies: ['SRG-OS-000185-GPOS-00079', 'SRG-OS-000404-GPOS-00183', 'SRG-OS-000405-GPOS-00184']

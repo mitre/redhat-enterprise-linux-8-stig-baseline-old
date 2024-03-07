@@ -19,27 +19,24 @@ control 'SV-250317' do
     /usr/lib/sysctl.d/*.conf
     /lib/sysctl.d/*.conf
     /etc/sysctl.conf'
-  desc 'check', 'Verify RHEL 8 is not performing IPv4 packet forwarding, unless the system
-    is a router.
+  desc 'check', 'Verify RHEL 8 is not performing IPv4 packet forwarding, unless the system is a router.
 
-    Check that IPv4 forwarding is disabled using the following command:
+Check that IPv4 forwarding is disabled using the following command:
 
-    $ sudo sysctl net..conf.all.forwarding
+$ sudo sysctl net.ipv4.conf.all.forwarding
 
-    net.ipv4.conf.all.forwarding = 0
+net.ipv4.conf.all.forwarding = 0
+If the IPv4 forwarding value is not "0" and is not documented with the Information System Security Officer (ISSO) as an operational requirement, this is a finding.
 
-    If the IPv4 forwarding value is not "0" and is not documented with the Information System
-    Security Officer (ISSO) as an operational requirement, this is a finding.
+Check that the configuration files are present to enable this network parameter.
 
-    Check that the configuration files are present to enable this network parameter.
+$ sudo grep -r net.ipv4.conf.all.forwarding /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
 
-    $ sudo grep -sr net.ipv4.conf.all.forwarding /run/sysctl.d/*.conf /usr/local/lib/sysctl.d/*.conf /usr/lib/sysctl.d/*.conf /lib/sysctl.d/*.conf /etc/sysctl.conf /etc/sysctl.d/*.conf
+/etc/sysctl.d/99-sysctl.conf: net.ipv4.conf.all.forwarding = 0
 
-    /etc/sysctl.d/99-sysctl.conf: net.ipv4.conf.all.forwarding = 0
+If "net.ipv4.conf.all.forwarding" is not set to "0", is missing or commented out, this is a finding.
 
-    If "net.ipv4.conf.all.forwarding" is not set to "0", is missing or commented out, this is a finding.
-
-    If conflicting results are returned, this is a finding.'
+If conflicting results are returned, this is a finding.'
   desc 'fix', 'Configure RHEL 8 to not allow IPv4 packet forwarding, unless the system is a router.
 
     Add or edit the following line in a system configuration file, in the "/etc/sysctl.d/" directory:
@@ -58,6 +55,7 @@ control 'SV-250317' do
 
     $ sudo sysctl --system'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-53751r833382_chk'
   tag severity: 'medium'
   tag gid: 'V-250317'

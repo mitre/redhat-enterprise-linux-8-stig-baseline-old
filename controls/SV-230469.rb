@@ -41,6 +41,7 @@ configuration survives kernel updates:
 
     GRUB_CMDLINE_LINUX="audit_backlog_limit=8192"'
   impact 0.3
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'low'
   tag gtitle: 'SRG-OS-000341-GPOS-00132'
   tag gid: 'V-230469'

@@ -31,6 +31,7 @@ file should be created under the appropriate subdirectory.
     Update the system databases:
     $ sudo dconf update'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00227'
   tag gid: 'V-244536'

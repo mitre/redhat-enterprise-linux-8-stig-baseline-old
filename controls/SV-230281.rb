@@ -26,6 +26,7 @@ updated versions have been installed.
 
     clean_requirements_on_remove=True'
   impact 0.3
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'low'
   tag gtitle: 'SRG-OS-000437-GPOS-00194'
   tag gid: 'V-230281'

@@ -28,6 +28,7 @@ control 'SV-230244' do
 
             $ sudo systemctl restart sshd.service'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000163-GPOS-00072'
   tag satisfies: ['SRG-OS-000163-GPOS-00072', 'SRG-OS-000126-GPOS-00066', 'SRG-OS-000279-GPOS-00109']

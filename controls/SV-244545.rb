@@ -37,7 +37,8 @@ preset: disabled)
   desc 'fix', 'Enable "fapolicyd" using the following command:
 
 $ sudo systemctl enable --now fapolicyd'
-  5
+  impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000368-GPOS-00154'
   tag satisfies: ['SRG-OS-000368-GPOS-00154', 'SRG-OS-000370-GPOS-00155', 'SRG-OS-000480-GPOS-00232']

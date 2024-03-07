@@ -27,7 +27,8 @@ Modify or append the following lines in the "/etc/ssh/sshd_config" file:
 For the changes to take effect, the SSH daemon must be restarted.
 
      $ sudo systemctl restart sshd.service'
-  impact 0.0
+  impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000163-GPOS-00072'
   tag satisfies: ['SRG-OS-000163-GPOS-00072', 'SRG-OS-000126-GPOS-00066', 'SRG-OS-000279-GPOS-00109']

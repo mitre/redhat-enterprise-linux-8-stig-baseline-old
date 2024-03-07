@@ -36,6 +36,7 @@ FirewallBackend=nftables
 
 Establish rate-limiting rules based on organization-defined types of DoS attacks on impacted network interfaces.'
   impact 0.5
+  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000420-GPOS-00186'
   tag gid: 'V-230525'
