@@ -48,9 +48,7 @@ line:
   tag 'host'
   tag 'container'
 
-  only_if('This check applies to RHEL version 8.2 and later. If the system is
-  not RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
-  not RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
+  only_if('This check applies to RHEL version 8.2 and later. If the system is not RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
     (os.release.to_f) >= 8.2
   }
 
