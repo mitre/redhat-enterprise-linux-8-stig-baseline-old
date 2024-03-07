@@ -67,9 +67,7 @@ restart the "sssd" service, run the following command:
   tag nist: ['IA-2 (1)']
   tag 'host'
 
-  only_if('If the System Administrator demonstrates the use of an approved
-    alternate multifactor authentication method, this requirement is not applicable.', impact: 0.0) {
-    alternate multifactor authentication method, this requirement is not applicable.', impact: 0.0) {
+  only_if('If the System Administrator demonstrates the use of an approved alternate multifactor authentication method, this requirement is not applicable.', impact: 0.0) {
     !input('smart_card_enabled')
   }
 

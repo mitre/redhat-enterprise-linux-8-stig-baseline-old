@@ -74,9 +74,7 @@ restart the "sssd" service, run the following command:
   tag 'host'
   tag 'container'
 
-  only_if('This check applies to RHEL version 8.1 and earlier. If the system is
-  RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
-  RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
+  only_if('This check applies to RHEL version 8.1 and earlier. If the system is RHEL version 8.2 or newer, this check is Not Applicable.', impact: 0.0) {
     (os.release.to_f) < 8.2
   }
 
