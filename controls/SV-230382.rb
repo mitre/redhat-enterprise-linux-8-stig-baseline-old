@@ -26,7 +26,7 @@ following:
 
     The SSH service must be restarted for changes to "sshd_config" to take
 effect.'
-  impact 0.5
+  5
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00227'
   tag gid: 'V-230382'

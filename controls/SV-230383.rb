@@ -27,7 +27,7 @@ own files.
 file to "077":
 
     UMASK 077'
-  impact 0.5
+  impact 0.7
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00228'
   tag gid: 'V-230383'

@@ -27,8 +27,8 @@ If the value for the "UMASK" parameter is not "077", or the "UMASK" parameter is
 Add or edit the lines for the "UMASK" parameter in the "/etc/bashrc", "/etc/csh.cshrc" and "/etc/profile"files to "077":
 
 UMASK 077'
-  impact 0.5
-  tag severity: 'medium'
+  impact 0.7
+  tag severity: 'high'
   tag gtitle: 'SRG-OS-000480-GPOS-00227'
   tag gid: 'V-230385'
   tag rid: 'SV-230385r792902_rule'

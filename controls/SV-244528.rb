@@ -22,7 +22,7 @@ and set the value to "no":
 the SSH daemon, run the following command:
 
     $ sudo systemctl restart sshd.service'
-  impact 0.5
+  impact 0.0
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00227'
   tag gid: 'V-244528'

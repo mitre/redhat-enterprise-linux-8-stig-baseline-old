@@ -45,7 +45,7 @@ Remove any configurations that conflict with the above from the following locati
 Load settings from all system configuration files with the following command:
 
 $ sudo sysctl --system'
-  impact 0.5
+  5
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00227'
   tag gid: 'V-244552'
