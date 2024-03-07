@@ -35,7 +35,8 @@ group-owned by "root".
   tag fix_id: 'F-32906r567533_fix'
   tag cci: ['CCI-001499']
   tag nist: ['CM-5 (6)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   failing_files = command("find -L #{input('system_libraries').join(' ')} ! -group root -exec ls -d {} \\;").stdout.split("\n")
 

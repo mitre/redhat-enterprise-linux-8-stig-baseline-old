@@ -1,6 +1,6 @@
 control 'SV-244526' do
   title 'The RHEL 8 SSH daemon must be configured to use system-wide crypto policies.'
-  desc "Without cryptographic integrity protections, information can be
+  desc 'Without cryptographic integrity protections, information can be
 altered by unauthorized users without detection.
 
     Remote access (e.g., RDP) is access to DoD nonpublic information systems by
@@ -16,7 +16,7 @@ maintaining the confidentiality of the secret key used to generate the hash.
     RHEL 8 incorporates system-wide crypto policies by default. The SSH
 configuration file has no effect on the ciphers, MACs, or algorithms unless
 specifically defined in the /etc/sysconfig/sshd file. The employed algorithms
-can be viewed in the /etc/crypto-policies/back-ends/ directory."
+can be viewed in the /etc/crypto-policies/back-ends/ directory.'
   desc 'check', 'Verify that system-wide crypto policies are in effect:
 
 $ sudo grep CRYPTO_POLICY /etc/sysconfig/sshd
@@ -24,12 +24,12 @@ $ sudo grep CRYPTO_POLICY /etc/sysconfig/sshd
 # CRYPTO_POLICY=
 
 If the "CRYPTO_POLICY " is uncommented, this is a finding.'
-  desc 'fix', "Configure the RHEL 8 SSH daemon to use system-wide crypto policies by adding the following line to /etc/sysconfig/sshd:
+  desc 'fix', 'Configure the RHEL 8 SSH daemon to use system-wide crypto policies by adding the following line to /etc/sysconfig/sshd:
 
 # CRYPTO_POLICY=
 
-A reboot is required for the changes to take effect."
-  impact 0.5
+A reboot is required for the changes to take effect.'
+  impact 0.0
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000250-GPOS-00093'
   tag satisfies: ['SRG-OS-000250-GPOS-00093', 'SRG-OS-000393-GPOS-00173', 'SRG-OS-000394-GPOS-00174', 'SRG-OS-000125-GPOS-00065']
@@ -39,9 +39,8 @@ A reboot is required for the changes to take effect."
   tag fix_id: 'F-47758r809333_fix'
   tag cci: ['CCI-001453']
   tag nist: ['AC-17 (2)']
-  tag 'host', 'container-conditional'
-
-  impact 0.0 if virtualization.system.eql?('docker') && !package('openssh-server').installed?
+  tag 'host'
+  tag 'container-conditional'
 
   if virtualization.system.eql?('docker')
     describe 'In a container Environment' do

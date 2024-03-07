@@ -29,7 +29,8 @@ Remove any configurations that conflict with the above value.'
   tag fix_id: 'F-33021r858788_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   describe parse_config_file('/etc/security/pwquality.conf') do
     its('dictcheck') { should eq '1' }

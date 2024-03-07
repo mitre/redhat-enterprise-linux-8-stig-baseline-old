@@ -33,7 +33,8 @@ directory owned by the application, it must be documented with the ISSO.'
   tag fix_id: 'F-32961r567698_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   ignore_shells = input('non_interactive_shells').join('|')
 

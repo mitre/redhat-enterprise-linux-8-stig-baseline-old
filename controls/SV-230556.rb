@@ -34,7 +34,8 @@ is provided by a third-party vendor):
   tag fix_id: 'F-33200r568415_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('This control is Not Applicable to containers', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !file('/etc/ssh/sshd_config').exist?)

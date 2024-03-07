@@ -23,7 +23,8 @@ $ sudo rm /etc/ssh/shosts.equiv'
   tag fix_id: 'F-32927r567596_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   shosts_files = command('find / -xdev -xautofs -name shosts.equiv').stdout.strip.split("\n")
 

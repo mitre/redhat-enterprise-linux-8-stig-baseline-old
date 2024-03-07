@@ -36,7 +36,8 @@ Remove any duplicate or conflicting lines from /etc/sudoers and /etc/sudoers.d/ 
   tag fix_id: 'F-40825r858763_fix'
   tag cci: ['CCI-002038']
   tag nist: ['IA-11']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('This requirement is Not Applicable in a container with no sudo installed', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !command('sudo').exist?)

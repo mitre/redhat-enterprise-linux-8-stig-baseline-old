@@ -43,7 +43,8 @@ be created.
   tag fix_id: 'F-32975r567740_fix'
   tag cci: ['CCI-000016']
   tag nist: ['AC-2 (2)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   tmp_users = input('temporary_accounts')
   tmp_max_days = input('temporary_account_max_days')

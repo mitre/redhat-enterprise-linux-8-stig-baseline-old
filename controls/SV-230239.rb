@@ -40,7 +40,8 @@ requirement or remove it from the system with the following command:
   tag fix_id: 'F-32883r567464_fix'
   tag cci: ['CCI-000803']
   tag nist: ['IA-7']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   krb5_workstation = package('krb5-workstation')
 

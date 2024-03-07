@@ -37,7 +37,7 @@ preset: disabled)
   desc 'fix', 'Enable "fapolicyd" using the following command:
 
 $ sudo systemctl enable --now fapolicyd'
-  impact 0.5
+  5
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000368-GPOS-00154'
   tag satisfies: ['SRG-OS-000368-GPOS-00154', 'SRG-OS-000370-GPOS-00155', 'SRG-OS-000480-GPOS-00232']

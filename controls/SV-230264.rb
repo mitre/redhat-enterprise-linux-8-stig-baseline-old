@@ -47,7 +47,8 @@ repository prior to install by setting the following option in the
   tag fix_id: 'F-32908r880710_fix'
   tag cci: ['CCI-001749']
   tag nist: ['CM-5 (3)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   # TODO: create a plural resource for repo def files (`repositories`?)
 

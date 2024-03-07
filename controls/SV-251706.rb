@@ -25,7 +25,9 @@ $ sudo passwd -l [username]'
   tag 'documentable'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container', 'review'
+  tag 'host'
+  tag 'container'
+  tag 'review'
 
   users_with_blank_passwords = shadow.where { password.nil? || password.empty? }.users - input('users_allowed_blank_passwords')
 

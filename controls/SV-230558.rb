@@ -29,7 +29,8 @@ or remove it from the system with the following command:
   tag fix_id: 'F-33202r568421_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('ftp_required')
     describe package('vsftpd') do

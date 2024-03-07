@@ -54,9 +54,11 @@ file to match the following lines:
   tag fix_id: 'F-47766r743850_fix'
   tag cci: ['CCI-000044']
   tag nist: ['AC-7 a']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   only_if('This check applies to RHEL versions 8.2 or newer, if the system is
+    RHEL version 8.0 or 8.1, this check is not applicable.', impact: 0.0) {
     RHEL version 8.0 or 8.1, this check is not applicable.', impact: 0.0) {
     (os.release.to_f) >= 8.2
   }

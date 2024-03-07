@@ -48,7 +48,8 @@ To restart the "rsyslog" service, run the following command:
   tag fix_id: 'F-32872r567431_fix'
   tag cci: ['CCI-000067']
   tag nist: ['AC-17 (1)']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('Control not applicable; remote access not configured within containerized RHEL', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !file('/etc/ssh/sshd_config').exist?)

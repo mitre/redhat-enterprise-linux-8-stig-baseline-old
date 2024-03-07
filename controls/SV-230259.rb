@@ -32,7 +32,8 @@ file not group-owned by "root" or a required system account.
   tag fix_id: 'F-32903r567524_fix'
   tag cci: ['CCI-001499']
   tag nist: ['CM-5 (6)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   failing_files = command("find -L #{input('system_command_dirs').join(' ')} ! -group root -exec ls -d {} \\;").stdout.split("\n")
 

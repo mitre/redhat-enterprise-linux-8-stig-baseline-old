@@ -26,7 +26,8 @@ $ sudo yum remove tftp-server'
   tag fix_id: 'F-33177r568346_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('tftp_required')
     describe package('tftp-server') do

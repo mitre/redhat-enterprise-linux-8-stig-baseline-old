@@ -38,7 +38,8 @@ Remove any configurations that conflict with the above value.'
   tag fix_id: 'F-33019r858786_fix'
   tag cci: ['CCI-001619']
   tag nist: ['IA-5 (1) (a)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   # value = input('ocredit')
   setting = 'ocredit'

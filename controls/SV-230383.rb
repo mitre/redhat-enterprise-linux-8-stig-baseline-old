@@ -27,7 +27,7 @@ own files.
 file to "077":
 
     UMASK 077'
-  impact 0.5
+  impact 0.7
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000480-GPOS-00228'
   tag gid: 'V-230383'
@@ -36,11 +36,11 @@ file to "077":
   tag fix_id: 'F-33027r567896_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   permissions_for_shells = input('permissions_for_shells')
 
-  impact 0.7 if login_defs.read_params['UMASK'].eql?('000')
   describe login_defs do
     its('UMASK') { should cmp permissions_for_shells['default_umask'] }
   end

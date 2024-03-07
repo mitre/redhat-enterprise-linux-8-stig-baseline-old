@@ -27,7 +27,7 @@ Modify or append the following lines in the "/etc/ssh/sshd_config" file:
 For the changes to take effect, the SSH daemon must be restarted.
 
      $ sudo systemctl restart sshd.service'
-  impact 0.5
+  impact 0.0
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000163-GPOS-00072'
   tag satisfies: ['SRG-OS-000163-GPOS-00072', 'SRG-OS-000126-GPOS-00066', 'SRG-OS-000279-GPOS-00109']
@@ -37,9 +37,8 @@ For the changes to take effect, the SSH daemon must be restarted.
   tag fix_id: 'F-47757r917885_fix'
   tag cci: ['CCI-001133']
   tag nist: ['SC-10']
-  tag 'host', 'container-conditional'
-
-  impact 0.0 if virtualization.system.eql?('docker') && !package('openssh-server').installed?
+  tag 'host'
+  tag 'container-conditional'
 
   setting = 'ClientAliveInterval'
   gssapi_authentication = input('sshd_config_values')

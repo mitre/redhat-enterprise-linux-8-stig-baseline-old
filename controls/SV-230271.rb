@@ -30,7 +30,8 @@ file or files in the "/etc/sudoers.d" directory.'
   tag fix_id: 'F-32915r854025_fix'
   tag cci: ['CCI-002038']
   tag nist: ['IA-11']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('Control not applicable within a container without sudo installed', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !command('sudo').exist?)

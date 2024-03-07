@@ -28,7 +28,8 @@ A reboot is required for the changes to take effect.'
   tag fix_id: 'F-33197r809323_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   input('remove_xorg_x11_server_packages').each do |p|
     describe package(p) do

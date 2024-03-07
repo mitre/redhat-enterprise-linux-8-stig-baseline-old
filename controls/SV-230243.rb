@@ -45,7 +45,8 @@ sticky bit:
   tag fix_id: 'F-32887r567476_fix'
   tag cci: ['CCI-001090']
   tag nist: ['SC-4']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   partitions = etc_fstab.params.map { |partition| partition['mount_point'] }.uniq
 

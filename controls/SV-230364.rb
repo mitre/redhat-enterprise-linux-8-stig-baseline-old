@@ -26,7 +26,8 @@ password lifetime:
   tag fix_id: 'F-33008r567839_fix'
   tag cci: ['CCI-000198']
   tag nist: ['IA-5 (1) (d)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   # TODO: add inputs for a frequecny
 

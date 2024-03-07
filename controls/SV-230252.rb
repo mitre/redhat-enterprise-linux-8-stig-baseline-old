@@ -45,7 +45,8 @@ A reboot is required for the changes to take effect.'
   tag fix_id: 'F-32896r917872_fix'
   tag cci: ['CCI-001453']
   tag nist: ['AC-17 (2)']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('Control not applicable - SSH is not installed within containerized RHEL', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !file('/etc/sysconfig/sshd').exist?)

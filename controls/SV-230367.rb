@@ -27,7 +27,8 @@ lifetime restriction.
   tag fix_id: 'F-33011r567848_fix'
   tag cci: ['CCI-000199']
   tag nist: ['IA-5 (1) (d)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   value = input('pass_max_days')
 

@@ -38,7 +38,8 @@ or remove it from the system with the following command:
   tag fix_id: 'F-33204r568427_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('iprutils_required')
     describe package('iprutils') do

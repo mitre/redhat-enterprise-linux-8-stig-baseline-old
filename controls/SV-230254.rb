@@ -53,7 +53,8 @@ this is a finding.'
   tag fix_id: 'F-32898r567509_fix'
   tag cci: ['CCI-001453']
   tag nist: ['AC-17 (2)']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if("Checking the host's FIPS compliance can't be done within the container and should be reveiwed manually.") {
     !(virtualization.system.eql?('docker') && !file('/etc/pki/tls/openssl.cnf').exist?)

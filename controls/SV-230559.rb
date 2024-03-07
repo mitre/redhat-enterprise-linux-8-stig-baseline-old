@@ -38,7 +38,8 @@ or remove it from the system with the following command:
   tag fix_id: 'F-33203r568424_fix'
   tag cci: ['CCI-000381']
   tag nist: ['CM-7 a']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('gssproxy_required')
     describe package('gssproxy') do

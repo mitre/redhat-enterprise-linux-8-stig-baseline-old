@@ -27,7 +27,8 @@ The SSH daemon must be restarted for the changes to take effect. To restart the 
   tag fix_id: 'F-32931r880713_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('This control is Not Applicable to containers without SSH installed', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !directory('/etc/ssh').exist?)

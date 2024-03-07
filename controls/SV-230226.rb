@@ -77,7 +77,8 @@ Run the following command to update the database:
   tag fix_id: 'F-32870r743915_fix'
   tag cci: ['CCI-000048']
   tag nist: ['AC-8 a']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   only_if("The system does not have GNOME installed; this requirement is Not
         Applicable.", impact: 0.0) { package('gnome-desktop3').installed? }

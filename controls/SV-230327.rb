@@ -29,7 +29,8 @@ with the "chgrp" command:
   tag fix_id: 'F-32971r567728_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('disable_slow_controls')
     describe 'This control consistently takes a long to run and has been disabled using the disable_slow_controls attribute.' do

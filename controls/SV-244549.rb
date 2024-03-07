@@ -1,6 +1,6 @@
 control 'SV-244549' do
   title 'All RHEL 8 networked systems must have SSH installed.'
-  desc "Without protection of the transmitted information, confidentiality and
+  desc 'Without protection of the transmitted information, confidentiality and
 integrity may be compromised because unprotected communications can be
 intercepted and either read or altered.
 
@@ -15,7 +15,7 @@ interception and modification.
 can be accomplished by physical means (e.g., employing physical distribution
 systems) or by logical means (e.g., employing cryptographic techniques). If
 physical means of protection are employed, then logical means (cryptography) do
-not have to be employed, and vice versa."
+not have to be employed, and vice versa.'
   desc 'check', 'Verify SSH is installed with the following command:
 
 $ sudo yum list installed openssh-server
@@ -23,10 +23,10 @@ $ sudo yum list installed openssh-server
 openssh-server.x86_64                 8.0p1-5.el8          @anaconda
 
 If the "SSH server" package is not installed, this is a finding.'
-  desc 'fix', "Install SSH packages onto the host with the following command:
+  desc 'fix', 'Install SSH packages onto the host with the following command:
 
-$ sudo yum install openssh-server.x86_64"
-  impact 0.5
+$ sudo yum install openssh-server.x86_64'
+  impact 0.0
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000423-GPOS-00187'
   tag satisfies: ['SRG-OS-000423-GPOS-00187', 'SRG-OS-000424-GPOS-00188', 'SRG-OS-000425-GPOS-00189', 'SRG-OS-000426-GPOS-00190']
@@ -36,9 +36,8 @@ $ sudo yum install openssh-server.x86_64"
   tag fix_id: 'F-47781r743895_fix'
   tag cci: ['CCI-002418']
   tag nist: ['SC-8']
-  tag 'host', 'container-conditional'
-
-  impact 0.0 if virtualization.system.eql?('docker') && !package('openssh-server').installed?
+  tag 'host'
+  tag 'container-conditional'
 
   if virtualization.system.eql?('docker')
     describe 'In a container Environment' do

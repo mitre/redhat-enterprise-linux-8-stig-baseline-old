@@ -32,7 +32,8 @@ Add the following line in "/etc/pam.d/system-auth" (or modify the line to have t
   tag 'documentable'
   tag cci: ['CCI-000200']
   tag nist: ['IA-5 (1) (e)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   pam_auth_files = input('pam_auth_files')
 

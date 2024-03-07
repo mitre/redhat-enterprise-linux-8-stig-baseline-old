@@ -47,7 +47,8 @@ control 'SV-230374' do
   tag fix_id: 'F-33018r902730_fix'
   tag cci: ['CCI-001682']
   tag nist: ['AC-2 (2)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   tmp_users = input('temporary_accounts')
 

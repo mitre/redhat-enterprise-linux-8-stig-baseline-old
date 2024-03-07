@@ -45,7 +45,8 @@ local interactive user's files and directories, use the following command:
   tag fix_id: 'F-47764r743844_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   ignore_shells = input('non_interactive_shells').join('|')
   exempt_home_users = input('exempt_home_users').join('|')

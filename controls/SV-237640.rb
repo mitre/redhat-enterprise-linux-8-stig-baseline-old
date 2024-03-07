@@ -39,7 +39,8 @@ requirement or remove it from the system with the following command:
   tag fix_id: 'F-40822r646889_fix'
   tag cci: ['CCI-000803']
   tag nist: ['IA-7']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   kerb = package('krb5-server')
 

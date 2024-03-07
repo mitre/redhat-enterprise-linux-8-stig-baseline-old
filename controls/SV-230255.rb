@@ -54,7 +54,8 @@ A reboot is required for the changes to take effect.'
   tag fix_id: 'F-32899r809381_fix'
   tag cci: ['CCI-001453']
   tag nist: ['AC-17 (2)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   crypto_policies = package('crypto-policies')
 

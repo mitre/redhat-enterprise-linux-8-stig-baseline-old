@@ -36,7 +36,8 @@ password sufficient pam_unix.so sha512'
   tag fix_id: 'F-47756r809330_fix'
   tag cci: ['CCI-000803']
   tag nist: ['IA-7']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   pam_auth_files = input('pam_auth_files')
 

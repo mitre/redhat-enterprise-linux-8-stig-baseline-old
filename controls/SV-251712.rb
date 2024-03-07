@@ -28,7 +28,8 @@ Remove any occurrences of "pam_succeed_if" in the file.'
   tag 'documentable'
   tag cci: ['CCI-002038']
   tag nist: ['IA-11']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   if virtualization.system.eql?('docker') && !command('sudo').exist?
     impact 0.0

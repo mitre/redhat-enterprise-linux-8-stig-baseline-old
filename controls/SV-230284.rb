@@ -22,7 +22,8 @@ $ sudo rm /[path]/[to]/[file]/.shosts'
   tag fix_id: 'F-32928r567599_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   shosts_files = command('find / -xdev -xautofs -name .shosts').stdout.strip.split("\n")
 

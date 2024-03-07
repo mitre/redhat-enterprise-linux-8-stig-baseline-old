@@ -30,7 +30,8 @@ $ sudo chmod 755 [FILE]'
   tag fix_id: 'F-32901r792861_fix'
   tag cci: ['CCI-001499']
   tag nist: ['CM-5 (6)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   failing_files = command("find -L #{input('system_command_dirs').join(' ')} -perm /0022 -exec ls -d {} \\;").stdout.split("\n")
 

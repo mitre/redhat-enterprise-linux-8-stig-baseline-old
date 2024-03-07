@@ -45,7 +45,8 @@ allow for a normal user to perform administrative-level actions.
   tag fix_id: 'F-33023r567884_fix'
   tag cci: ['CCI-000366']
   tag nist: ['CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   failing_users = passwd.users.reject { |u| (input('known_system_accounts') + input('user_accounts')).uniq.include?(u) }
 

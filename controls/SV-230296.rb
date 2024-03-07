@@ -36,7 +36,8 @@ the SSH daemon, run the following command:
   tag fix_id: 'F-32940r567635_fix'
   tag cci: ['CCI-000770']
   tag nist: ['IA-2 (5)']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('This control is Not Applicable to containers without SSH installed', impact: 0.0) {
     !(virtualization.system.eql?('docker') && !directory('/etc/ssh').exist?)

@@ -45,7 +45,8 @@ adding the following line to "/etc/crypto-policies/back-ends/gnutls.config":
   tag fix_id: 'F-32900r567515_fix'
   tag cci: ['CCI-001453']
   tag nist: ['AC-17 (2)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   gnutls = file('/etc/crypto-policies/back-ends/gnutls.config').content.upcase.strip.split(':')
   unapproved_versions = input('unapproved_ssl_tls_versions').map(&:upcase)

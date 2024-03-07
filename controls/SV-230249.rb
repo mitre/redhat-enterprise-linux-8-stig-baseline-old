@@ -31,7 +31,8 @@ command:
   tag fix_id: 'F-32893r567494_fix'
   tag cci: ['CCI-001314']
   tag nist: ['SI-11 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   describe directory('/var/log') do
     it { should exist }

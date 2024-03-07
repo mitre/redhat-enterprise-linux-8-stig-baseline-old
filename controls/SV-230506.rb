@@ -58,7 +58,8 @@ following command:
   tag fix_id: 'F-33150r568265_fix'
   tag cci: ['CCI-001444']
   tag nist: ['AC-18 (1)']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   if input('wifi_hardware')
     describe command('nmcli device') do

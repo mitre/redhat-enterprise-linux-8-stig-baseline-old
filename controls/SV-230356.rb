@@ -28,7 +28,8 @@ Add the following line to the "/etc/pam.d/password-auth" file (or modify the lin
   tag fix_id: 'F-33000r902727_fix'
   tag cci: ['CCI-000192', 'CCI-000366']
   tag nist: ['IA-5 (1) (a)', 'CM-6 b']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   pam_auth_files = input('pam_auth_files')
 

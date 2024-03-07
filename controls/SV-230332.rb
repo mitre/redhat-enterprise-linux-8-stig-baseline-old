@@ -76,7 +76,8 @@ restart the "sssd" service, run the following command:
   tag fix_id: 'F-32976r567743_fix'
   tag cci: ['CCI-000044']
   tag nist: ['AC-7 a']
-  tag 'host', 'container'
+  tag 'host'
+  tag 'container'
 
   unsuccessful_attempts = input('unsuccessful_attempts')
   pam_auth_files = input('pam_auth_files')

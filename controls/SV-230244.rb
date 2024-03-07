@@ -37,7 +37,8 @@ control 'SV-230244' do
   tag fix_id: 'F-32888r917866_fix'
   tag cci: ['CCI-001133']
   tag nist: ['SC-10']
-  tag 'host', 'container-conditional'
+  tag 'host'
+  tag 'container-conditional'
 
   only_if('SSH is not installed on the system this requirement is Not Applicable', impact: 0.0) {
     (service('sshd').enabled? || package('openssh-server').installed?)
