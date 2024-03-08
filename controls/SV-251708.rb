@@ -23,11 +23,8 @@ If any system-wide shared library directory is returned, this is a finding.)
   tag nist: ['CM-5 (6)']
   tag 'host'
   tag 'container'
-  tag 'review'
 
   non_root_owned_libs = input('system_libraries').reject { |lib| file(lib).owned_by?('root') }
-
-  # TODO: is this NA in continers?
 
   describe 'System libraries' do
     it 'should be owned by root' do
