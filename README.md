@@ -2,13 +2,8 @@
 
 The Redhat Enterprise Linux 8.X Security Technical Implementation Guide (RHEL8.x STIG) InSpec Profile can help programs automate their compliance checks of RedHat Enterprise Linux 8.x System to Department of Defense (DoD) requirements.
 
-<<<<<<< HEAD
 - Profile Version: `1.13.0`
 - RedHat Enterprise Linux 8 Security Technical Implementation Guide v1r13
-=======
-- Profile Version: `1.12.1`
-- RedHat Enterprise Linux 8 Security Technical Implementation Guide v1r12
->>>>>>> 0139032 (bumping patch version)
 
 This profile was developed to reduce the time it takes to perform a security checks based upon the STIG Guidance from the Defense Information Systems Agency (DISA) in partnership between the DISA Services Directorate (SD) and the DISA Risk Management Executive (RME) office.
 
@@ -67,10 +62,14 @@ The RHEL8.x STIG profile checks were developed to provide technical implementati
 ### Source Guidance
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 - RedHat Enterprise Linux 8 Security Technical Implementation Guide V1R13
 =======
 - RedHat Enterprise Linux 8 Security Technical Implementation Guide v1r13
 >>>>>>> 66149e1 (v1r13)
+=======
+- RedHat Enterprise Linux 8 Security Technical Implementation Guide V1R13
+>>>>>>> 2c7055b (update 12s to 13s in README)
 
 ### Current Profile Statistics
 
@@ -274,20 +273,28 @@ Releases use Semantic Versioning (SemVer), aligning with the STIG Benchmark vers
 ### Tags
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This profile does not use a specific 'current' or 'latest' tag. The current/latest tag for the profile and repository will always be the latest major tag of the benchmark. For example, if `version 1, release 13` is the latest Benchmark release from the STIG author, then the tag `v1.13` will point to the `v1.13.3` release of the code.
 =======
 This profile does not use a specific 'current' or 'latest' tag. The current/latest tag for the profile and repository will always be the latest major tag of the benchmark. For example, if `version 1, release 12` is the latest Benchmark release from the STIG author, then the tag `v1.13` will point to the `v1.13.3` release of the code.
 >>>>>>> 66149e1 (v1r13)
+=======
+This profile does not use a specific 'current' or 'latest' tag. The current/latest tag for the profile and repository will always be the latest major tag of the benchmark. For example, if `version 1, release 13` is the latest Benchmark release from the STIG author, then the tag `v1.13` will point to the `v1.13.3` release of the code.
+>>>>>>> 2c7055b (update 12s to 13s in README)
 
 #### Major and Minor Version Tags
 
 Major tags point to the latest version of the STIG that they test, and minor tags point to the latest version and release of a STIG. The patch tag indicates the patch number of the InSpec profile itself and is the only tag in the semver that does not directly correspond to the STIG's schema.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
  For example, `v1.3` and `v1.3.0` represent the first release of the Red Hat Enterprise Linux 8 STIG V1R3 Benchmark. The `v1.13.{z}` tag(s) represents the V1R13 Benchmark releases as the profile authors find bugs, fixes, or general improvements to the testing profile. This tag will point to its `v{x}r{y}.{z}` counterpart.
 =======
  For example, `v1.3` and `v1.3.0` represent the first release of the Red Hat Enterprise Linux 8 STIG V1R3 Benchmark. The `v1.13.{z}` tag(s) represents the V1R12 Benchmark releases as the profile authors find bugs, fixes, or general improvements to the testing profile. This tag will point to its `v{x}r{y}.{z}` counterpart.
 >>>>>>> 66149e1 (v1r13)
+=======
+ For example, `v1.3` and `v1.3.0` represent the first release of the Red Hat Enterprise Linux 8 STIG V1R3 Benchmark. The `v1.13.{z}` tag(s) represents the V1R13 Benchmark releases as the profile authors find bugs, fixes, or general improvements to the testing profile. This tag will point to its `v{x}r{y}.{z}` counterpart.
+>>>>>>> 2c7055b (update 12s to 13s in README)
 
 ### Patch Releases
 
@@ -300,10 +307,14 @@ For example, after releasing `v1.13.0`, we point `v1.13` to that patch release: 
 This profile is updated and managed using our standard MITRE SAF InSpec Profile Development and Update process. You can learn more about this and how to help us keep the profile up to date from release to release of the Red Hat Enterprise Linux 8 STIG Benchmark at [SAF Profile Maintenance](https://mitre.github.io/saf-training-current/courses/profile-dev "Profile Maintenance Process") Process.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 For example, `v1.13.2` would be the Red Hat Enterprise Linux 8 STIG Version 1 Release 13 with two 'patch' releases from the first `v1.13.0` release.
 =======
 For example, `v1.13.2` would be the Red Hat Enterprise Linux 8 STIG Version 1 Release 12 with two 'patch' releases from the first `v1.13.0` release.
 >>>>>>> 66149e1 (v1r13)
+=======
+For example, `v1.13.2` would be the Red Hat Enterprise Linux 8 STIG Version 1 Release 13 with two 'patch' releases from the first `v1.13.0` release.
+>>>>>>> 2c7055b (update 12s to 13s in README)
 
 ### Submitting Bugs
 
