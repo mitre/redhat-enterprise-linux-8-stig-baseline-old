@@ -53,12 +53,12 @@ If the release is not supported by the vendor, this is a finding.'
     /^8\.1/ => '30 November 2021',
     /^8\.2/ => '30 April 2022',
     /^8\.3/ => '30 April 2021',
-    /^8\.4/ => '30 April 2023',
-    /^8\.5/ => '30 April 2022',
-    /^8\.6/ => '30 April 2024',
-    /^8\.7/ => '30 April 2023',
-    /^8\.8/ => '30 April 2025',
-    /^8\.9/ => '30 April 2024',
+    /^8\.4/ => '31 May 2023',
+    /^8\.5/ => '31 May 2022',
+    /^8\.6/ => '31 May 2024',
+    /^8\.7/ => '31 May 2023',
+    /^8\.8/ => '31 May 2025',
+    /^8\.9/ => '31 May 2024',
     /^8\.10/ => '31 May 2029'
   }.find { |k, _v| k.match(release) }&.last
 
