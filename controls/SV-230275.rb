@@ -30,7 +30,6 @@ control 'SV-230275' do
 
         $ sudo yum install opensc'
   impact 0.5
-  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000376-GPOS-00161'
   tag gid: 'V-230275'

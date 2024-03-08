@@ -11,7 +11,6 @@ If any system-wide shared library directory is returned, this is a finding.)
 
               $ sudo chown root [DIRECTORY]'
   impact 0.5
-  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-55145r810011_chk'
   tag severity: 'medium'
   tag gid: 'V-251708'

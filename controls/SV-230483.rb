@@ -27,7 +27,6 @@ control 'SV-230483' do
 
     Note: Option names and values in the auditd.conf file are case insensitive.'
   impact 0.5
-  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000343-GPOS-00134'
   tag gid: 'V-230483'

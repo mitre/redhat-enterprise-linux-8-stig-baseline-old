@@ -18,7 +18,6 @@ The "logind" service must be restarted for the changes to take effect. To restar
 
 Note: To preserve running user programs such as tmux, uncomment and/or edit "KillUserProccesses=no" in "/etc/systemd/logind.conf".'
   impact 0.5
-  ref 'DPMS Target Red Hat Enterprise Linux 8'
   tag check_id: 'C-60942r917889_chk'
   tag severity: 'medium'
   tag gid: 'V-257258'
