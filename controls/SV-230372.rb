@@ -70,6 +70,11 @@ restart the "sssd" service, run the following command:
     !input('smart_card_enabled')
   }
 
+  action = 'cert_auth'
+
+  search_result = command("grep -r #{action} /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf").stdout.strip
+  correct_result = search_result.lines.any? { |line| line.match(/#{action}\s*=\s*true/i) }
+
   pam_auth_files = input('pam_auth_files')
 
   if virtualization.system.eql?('docker')
@@ -78,9 +83,12 @@ restart the "sssd" service, run the following command:
       skip 'Control not applicable within a container'
     end
   else
-    describe parse_config_file(input('sssd_conf_path')) do
-      its('pam') { should include('pam_cert_auth' => 'True') }
+    describe "sssd config" do
+      it "should set #{action}" do
+        expect(correct_result).to be true
+      end
     end
+    
     describe service('sssd') do
       it { should be_installed }
       it { should be_enabled }
