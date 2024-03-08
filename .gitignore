@@ -17,6 +17,7 @@ Gemfile.lock
 inspec.lock
 .kitchen
 vendor/**
+saf-cli.log
 
 # Used by dotenv library to load environment variables.
 # .env
