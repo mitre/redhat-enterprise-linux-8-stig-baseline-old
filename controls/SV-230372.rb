@@ -67,38 +67,29 @@ restart the "sssd" service, run the following command:
   tag 'host'
 
   only_if('If the System Administrator demonstrates the use of an approved alternate multifactor authentication method, this requirement is not applicable.', impact: 0.0) {
-    !input('smart_card_enabled')
+    input('smart_card_enabled')
   }
 
-  action = 'cert_auth'
-
-  search_result = command("grep -r #{action} /etc/sssd/sssd.conf /etc/sssd/conf.d/*.conf").stdout.strip
-  correct_result = search_result.lines.any? { |line| line.match(/#{action}\s*=\s*true/i) }
+  sssd_conf_files = input('sssd_conf_files')
+  sssd_conf_contents = ini({ command: "cat #{input('sssd_conf_files').join(' ')}" })
 
   pam_auth_files = input('pam_auth_files')
 
-  if virtualization.system.eql?('docker')
-    impact 0.0
-    describe 'Control not applicable within a container' do
-      skip 'Control not applicable within a container'
+  describe 'SSSD' do
+    it 'should be installed and enabled' do
+      expect(service('sssd')).to be_installed.and be_enabled
+      expect(sssd_conf_contents.params).to_not be_empty, "SSSD configuration files not found or have no content; files checked:\n\t- #{sssd_conf_files.join("\n\t- ")}"
     end
-  else
-    describe "sssd config" do
-      it "should set #{action}" do
-        expect(correct_result).to be true
+    if sssd_conf_contents.params.nil?
+      it "should configure pam_cert_auth" do
+        expect(sssd_conf_contents.sssd.pam_cert_auth).to eq(true)
       end
     end
-    
-    describe service('sssd') do
-      it { should be_installed }
-      it { should be_enabled }
-      it { should be_running }
-    end
+  end
 
-    [pam_auth_files['system-auth'], pam_auth_files['smartcard-auth']].each do |path|
-      describe pam(path) do
-        its('lines') { should match_pam_rule('.* .* pam_sss.so (try_cert_auth|require_cert_auth)') }
-      end
+  [pam_auth_files['system-auth'], pam_auth_files['smartcard-auth']].each do |path|
+    describe pam(path) do
+      its('lines') { should match_pam_rule('.* .* pam_sss.so (try_cert_auth|require_cert_auth)') }
     end
   end
 end
