@@ -26,7 +26,7 @@ If output is produced, this is a finding.'
 
   pam_auth_files = input('pam_auth_files')
   file_list = pam_auth_files.values.join(' ')
-  bad_entries = command("grep -i nullok #{file_list}").stdout.lines.collect(&:squish)
+  bad_entries = command("grep -i nullok #{file_list}").stdout.lines.collect { |line| line.split.join(' ' ) }
 
   describe 'The system is configureed' do
     subject { command("grep -i nullok #{file_list}") }
