@@ -1,4 +1,4 @@
-# RedHat Enterprise Linux 8 v1r12 STIG Profile
+# RedHat Enterprise Linux 8 v1r13 STIG Profile
 
 
 ## Directory Structure

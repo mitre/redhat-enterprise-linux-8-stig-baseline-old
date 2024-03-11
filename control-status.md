@@ -1,4 +1,4 @@
-| Assignee | Control   | Priority or *=ansible | Reviewed | Tested | V1R12 | Needs New Resource(s)?           | Inputs                                                                                                    |
+| Assignee | Control   | Priority or *=ansible | Reviewed | Tested | V1R13 | Needs New Resource(s)?           | Inputs                                                                                                    |
 | -------- | --------- | --------------------- | -------- | ------ | ----- | -------------------------------- | --------------------------------------------------------------------------------------------------------- |
 | W,A      | SV-230221 |                       | Y        | Y      | Y     | N                                | None                                                                                                      |
 | W,A      | SV-230222 | Y                     | Y        | Y      | Y     | N                                | `disable_slow_controls`                                                                                 |
