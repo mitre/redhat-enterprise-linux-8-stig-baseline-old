@@ -26,11 +26,7 @@ If the "SSH server" package is not installed, this is a finding.'
   desc 'fix', 'Install SSH packages onto the host with the following command:
 
 $ sudo yum install openssh-server.x86_64'
-<<<<<<< HEAD
   impact 0.5
-=======
-  impact 0.0
->>>>>>> 1443847 (ran formatter, manually fixed the misassigned impact tags)
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000423-GPOS-00187'
   tag satisfies: ['SRG-OS-000423-GPOS-00187', 'SRG-OS-000424-GPOS-00188', 'SRG-OS-000425-GPOS-00189', 'SRG-OS-000426-GPOS-00190']

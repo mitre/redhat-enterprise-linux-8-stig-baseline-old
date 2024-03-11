@@ -29,11 +29,7 @@ If the "CRYPTO_POLICY " is uncommented, this is a finding.'
 # CRYPTO_POLICY=
 
 A reboot is required for the changes to take effect.'
-<<<<<<< HEAD
   impact 0.5
-=======
-  impact 0.0
->>>>>>> 1443847 (ran formatter, manually fixed the misassigned impact tags)
   tag severity: 'medium'
   tag gtitle: 'SRG-OS-000250-GPOS-00093'
   tag satisfies: ['SRG-OS-000250-GPOS-00093', 'SRG-OS-000393-GPOS-00173', 'SRG-OS-000394-GPOS-00174', 'SRG-OS-000125-GPOS-00065']
