@@ -22,3 +22,8 @@
     force: true
   with_items:
       - "{{ files_with_too_high_perms.stdout_lines }}"
+
+- name: fix busted symlink to /usr/bin/miniterm-3.6.py in /bin
+  ansible.builtin.file:
+    path: /bin/miniterm-3.6.py
+    state: absent
