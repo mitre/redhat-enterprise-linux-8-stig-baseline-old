@@ -13,6 +13,8 @@ supports:
     release: 8.*
   - platform-name: redhat
     release: 8.*
+  - platform-name: amazon
+    release: 2023.*
 
 ### INPUTS ###
 # Inputs are variables that can be referenced by any control in the profile, 
