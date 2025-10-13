@@ -44,10 +44,6 @@ Table of Contents
   - [Updates, Releases \& Submitting PRs to the Profile](#updates-releases-submitting-prs-to-the-profile)
     - [Submitting Bugs](#submitting-bugs)
 - [Authors](#authors)
-    - [NOTICE](#notice)
-    - [NOTICE](#notice-1)
-    - [NOTICE](#notice-2)
-    - [NOTICE](#notice-3)
 
 ## RedHat 8.x Enterprise Linux Security Technical Implementation Guide (RHEL8 STIG)
 
